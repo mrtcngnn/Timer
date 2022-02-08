@@ -1,25 +1,23 @@
-body{
+body {
     background: url("https://images.wallpaperscraft.com/image/single/shakespeare_time_title_motivation_85147_1920x1080.jpg") no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    padding-top: 100px;
 }
 
-h2{
+h2 {
     font-size: 4rem;
     color: rgb(167, 205, 154);
     text-align: center;
 }
 
-#alt-baslik{
+#alt-baslik {
     font-size: 2rem;
     color: darkgray;
 }
 
-.text{
+.text {
     color: darkgray;
     font-size: 1.75rem;
     font-weight: 400;
@@ -27,7 +25,7 @@ h2{
     margin: 1rem;
 }
 
-.time{
+.time {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 6rem;
     font-weight: 400;
@@ -35,7 +33,7 @@ h2{
     margin: 1rem;
 }
 
-.buton{
+.buton {
     background-color: rgba(0, 0, 0, 0.37);
     color: white;
     border-radius: 10px 20px;
@@ -44,49 +42,37 @@ h2{
     padding: 10px;
 }
 
-.buton:hover{
+.buton:hover {
     background-color: darksalmon;
-    border: 2px solid rgba(0, 0, 0, 0.37);
-    border-radius: 20px 10px;
+    box-shadow: 5px 5px 5px 5px #808080;
 }
 
-.buttons{
-    
+.inside-header {
+    color: darksalmon;
 }
 
-.kronometre{
-    display: flex;
-    flex-direction: column;
+.inside-buttons {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+#kronometre {
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-.zamanlayici{
     display: none;
 }
 
-.kalan-sure{
+#zamanlayici {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     display: none;
 }
 
-.kronometre:active{
-    display: flex;
+#kalan-sure {
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-.zamanlayici:active{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.kalan-sure:active{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: none;
 }
