@@ -9,132 +9,87 @@
     <link rel="stylesheet" href="style.css">
     <title>Timer</title>
     <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <h2>TIMER</h2>
-    <div class="container text-center mt-5" id="top-container">
+    <div class="container text-center mt-4" id="top-container">
 
         <div id="buttons">
-            <input type="button" value="Kronometre" class="buton" id="kronometre-b" onclick="kronometreActive()">
-            <input type="button" value="Zamanlayıcı" class="buton ml-3" id="zamanlayici-b" onclick="zamanlayiciActive()">
-            <input type="button" value="Ne Kadar Süre Var?" class="buton ml-3" id="kalan-sure-b" onclick="kalanSureActive()">
+            <button class="buton" id="kronometre-b" onclick="kronometreActive()">Kronometre</button>
+            <button class="buton ml-3" id="zamanlayici-b" onclick="zamanlayiciActive()">Zamanlayıcı</button>
+            
         </div>
 
         <div id="kronometre">
-            <h4 class="inside-header">KRONOMETRE</h4>
+            <h4 class="inside-header mt-4">KRONOMETRE</h4>
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <div class="days">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Days</span>
-                        </div>
+                        <p class="time" id="daysk">0</p>
+                        <span class="text">Days</span>
                     </div>
                     <div class="col-3">
-                        <div class="hours">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Hours</span>
-                        </div>
+                        <p class="time" id="hoursk">0</p>
+                        <span class="text">Hours</span>
                     </div>
                     <div class="col-3">
-                        <div class="minutes">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Minutes</span>
-                        </div>
+                        <p class="time" id="minutesk">0</p>
+                        <span class="text">Minutes</span>
                     </div>
                     <div class="col-3">
-                        <div class="seconds">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Seconds</span>
-                        </div>
+                        <p class="time" id="secondsk">0</p>
+                        <span class="text">Seconds</span>
                     </div>
                     <div class="col-12 align-items-center mt-5">
-                        <input type="button" value="Sıfırla" class="inside-buttons btn btn-primary">
-                        <input type="button" value="Durdur" class="inside-buttons btn btn-primary ml-3">
-                        <input type="button" value="Başlat" class="inside-buttons btn btn-success ml-3">
-                        <input type="button" value="Geri" class="inside-buttons btn btn-danger ml-3" onclick="geri()">
+                        <input type="button" value="Sıfırla" class="inside-buttons btn btn-primary" onclick="resetKronometre()">
+                        <input type="button" value="Durdur" class="inside-buttons btn btn-primary ml-3" onclick="stopKronometre()">
+                        <input type="button" value="Başlat" class="inside-buttons btn btn-success ml-3" onclick="start()">
+                        <input type="button" value="Kapat" class="inside-buttons btn btn-danger ml-3" onclick="geri()">
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="zamanlayici">
-            <h4>ZAMANLAYICI</h4>
+            <h4 class="inside-header mt-4">ZAMANLAYICI</h4>
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <div class="days">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Days</span>
-                        </div>
+                        <p class="time" id="daysz">0</p>
+                        <input type="text" value="0" id="daysi" style="width:50px; height: 50px; border-radius: 50%; background-color: rgba(0, 0, 0, 0.37); font-size: 25px; color: white; text-align: center; border: 1px solid white;">
+                        <span class="text">Days</span>
                     </div>
                     <div class="col-3">
-                        <div class="hours">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Hours</span>
-                        </div>
+                        <p class="time" id="hoursz">0</p>
+                        <input type="text" value="0" id="hoursi" style="width:50px; height: 50px; border-radius: 50%; background-color: rgba(0, 0, 0, 0.37); font-size: 25px; color: white; text-align: center; border: 1px solid white;">
+                        <span class="text">Hours</span>
                     </div>
                     <div class="col-3">
-                        <div class="minutes">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Minutes</span>
-                        </div>
+                        <p class="time" id="minutesz">0</p>
+                        <input type="text" value="0" id="minutesi" style="width:50px; height: 50px; border-radius: 50%; background-color: rgba(0, 0, 0, 0.37); font-size: 25px; color: white; text-align: center; border: 1px solid white;">
+                        <span class="text">Minutes</span>
                     </div>
                     <div class="col-3">
-                        <div class="seconds">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Seconds</span>
-                        </div>
+                        <p class="time" id="secondsz">0</p>
+                        <input type="text" value="0" id="secondsi" style="width:50px; height: 50px; border-radius: 50%; background-color: rgba(0, 0, 0, 0.37); font-size: 25px; color: white; text-align: center; border: 1px solid white;">
+                        <span class="text">Seconds</span>
                     </div>
                     <div class="col-12 align-items-center mt-5">
-                        <input type="button" value="Sıfırla" class="inside-buttons btn btn-primary">
-                        <input type="button" value="Durdur" class="inside-buttons btn btn-primary ml-3">
-                        <input type="button" value="Başlat" class="inside-buttons btn btn-success ml-3">
-                        <input type="button" value="Geri" class="inside-buttons btn btn-danger ml-3" onclick="geri()">
+                        <input type="button" value="Sıfırla" class="inside-buttons btn btn-primary" onclick="resetZamanlayici()">
+                        <input type="button" value="Durdur" class="inside-buttons btn btn-primary ml-3" onclick="stopZamanlayici()">
+                        <input type="button" value="Başlat" class="inside-buttons btn btn-success ml-3" onclick="startZamanlayici()">
+                        <input type="button" value="Kapat" class="inside-buttons btn btn-danger ml-3" onclick="geriZamanlayici()">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="kalan-sure">
-            <h4>NE KADAR SÜRE VAR?</h4>
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="days">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Days</span>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="hours">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Hours</span>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="minutes">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Minutes</span>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="seconds">
-                            <p class="time" id="days">0</p>
-                            <span class="text">Seconds</span>
-                        </div>
-                    </div>
-                    <div class="col-12 align-items-center mt-5">
-                        <input type="button" value="Sıfırla" class="inside-buttons btn btn-primary">
-                        <input type="button" value="Durdur" class="inside-buttons btn btn-primary ml-3">
-                        <input type="button" value="Başlat" class="inside-buttons btn btn-success ml-3">
-                        <input type="button" value="Geri" class="inside-buttons btn btn-danger ml-3" onclick="geri()">
-                    </div>
-                </div>
-            </div>
+        <div class="col-12 mt-5">
+            <footer>Mert Can Gönen &copy</footer>
         </div>
-
     </div>
 </body>
 
