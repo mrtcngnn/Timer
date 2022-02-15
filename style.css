@@ -71,7 +71,16 @@ h2 {
     display: none;
 }
 
-input:focus{
+#message {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
+    color: white;
+    font-size: 100px;
+}
+
+input:focus {
     outline: none;
 }
 
