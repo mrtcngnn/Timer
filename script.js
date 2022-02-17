@@ -1,11 +1,19 @@
 function kronometreActive() {
     $('#kronometre').slideDown('2000');
     document.getElementById('zamanlayici').style.display = 'none';
+    document.getElementById('kalan-sure').style.display = 'none';
 }
 
 function zamanlayiciActive() {
     $('#zamanlayici').slideDown('2000');
     document.getElementById('kronometre').style.display = 'none';
+    document.getElementById('kalan-sure').style.display = 'none';
+}
+
+function kalanSureActive() {
+    document.getElementById('kronometre').style.display = 'none';
+    document.getElementById('zamanlayici').style.display = 'none';
+    $('#kalan-sure').slideDown('2000');
 }
 
 //KRONOMETRE PART
@@ -152,4 +160,52 @@ function geriZamanlayici() {
     document.getElementById('hoursz').innerHTML = "0";
     document.getElementById('daysz').innerHTML = "0";
     $('#zamanlayici').fadeOut('1000');
+}
+
+//ZAMANLAYICI PART IS FINISHED!!!
+//KALAN SURE PART
+
+var k;
+var km, kh, kd;
+
+function geriKalanSure() {
+    $('#kalan-sure').fadeOut('1000');
+    document.getElementById('start').value = new Date().toISOString().substring(0, 10);
+    document.getElementById('finish').value = new Date().toISOString().substring(0, 10);
+}
+
+function resetKalanSure() {
+    $('#output').fadeOut('1000');
+    document.getElementById('start').value = new Date().toISOString().substring(0, 10);
+    document.getElementById('finish').value = new Date().toISOString().substring(0, 10);
+}
+
+function hesaplaKalanSure() {
+    var startDate = new Date(document.getElementById('start').value);
+    var startDay = startDate.getUTCDate();
+    var startMonth = startDate.getUTCMonth() + 1;
+    var startYear = startDate.getUTCFullYear();
+    var finishDate = new Date(document.getElementById('finish').value);
+    var finishDay = finishDate.getUTCDate();
+    var finishMonth = finishDate.getUTCMonth() + 1;
+    var finishYear = finishDate.getUTCFullYear();
+    var result = ((finishDate - startDate) / 1000) / 86400;
+    $('#output').fadeIn('1000');
+    if (startYear > finishYear) {
+        alert("You exceeded the time limits!!!");
+    } else if (startYear == finishYear) {
+        if (startMonth > finishMonth) {
+            alert("You exceeded the time limits!!!");
+        } else if (startMonth == finishMonth) {
+            if (startDay > finishDay) {
+                alert("You exceeded the time limits!!!");
+            } else {
+                document.getElementById('daysks').innerHTML = result;
+            }
+        } else if (startMonth < finishMonth) {
+            document.getElementById('daysks').innerHTML = result;
+        }
+    } else if (startYear < finishYear) {
+        document.getElementById('daysks').innerHTML = result;
+    }
 }

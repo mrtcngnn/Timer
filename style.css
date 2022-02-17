@@ -71,6 +71,13 @@ h2 {
     display: none;
 }
 
+#kalan-sure {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
+}
+
 #message {
     align-items: center;
     justify-content: center;
@@ -86,4 +93,24 @@ input:focus {
 
 footer {
     color: rgba(255, 255, 255, 0.74);
+}
+
+label {
+    font: 3rem 'Fira Sans', sans-serif;
+    color: white;
+    display: block;
+}
+
+input[type="date"] {
+    margin-top: 1rem;
+    padding: 20px;
+    font: 1.5rem 'Fira Sans', sans-serif;
+    border-radius: 10px;
+}
+
+#output {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: none;
 }

@@ -20,7 +20,7 @@
         <div id="buttons">
             <button class="buton" id="kronometre-b" onclick="kronometreActive()">Kronometre</button>
             <button class="buton ml-3" id="zamanlayici-b" onclick="zamanlayiciActive()">Zamanlayıcı</button>
-
+            <button class="buton ml-3" id="kalansure-b" onclick="kalanSureActive()">Ne Kadar Süre Kaldı?</button>
         </div>
 
         <div id="kronometre">
@@ -89,6 +89,37 @@
 
         <div id="message">
             <p>Time is over!!!</p>
+        </div>
+
+        <div id="kalan-sure">
+            <h4 class="inside-header mt-4">Ne Kadar Süre Var?</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="start">Start Date</label>
+                        <input type="date" id="start" name="start">
+                        <script>
+                            document.getElementById('start').value = new Date().toISOString().substring(0, 10);
+                        </script>
+                    </div>
+                    <div class="col-6">
+                        <label for="start">Finish Date</label>
+                        <input type="date" id="finish" name="finish">
+                        <script>
+                            document.getElementById('finish').value = new Date().toISOString().substring(0, 10);
+                        </script>
+                    </div>
+                    <div class="col-12" id="output">
+                        <p class="time" id="daysks">0</p>
+                        <span class="text">Days</span>
+                    </div>
+                    <div class="col-12 align-items-center mt-4">
+                        <input type="button" value="Sıfırla" class="inside-buttons btn btn-primary" onclick="resetKalanSure()">
+                        <input type="button" value="Hesapla" class="inside-buttons btn btn-success ml-3" onclick="hesaplaKalanSure()">
+                        <input type="button" value="Kapat" class="inside-buttons btn btn-danger ml-3" onclick="geriKalanSure()">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="col-12 mt-5">
