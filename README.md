@@ -3,7 +3,7 @@ This is a web application which is coded with Javascript (backend) and HTML, CSS
 <br/>
 There are 3 options to use that app;<br/>
 <br/>
-1)Stopwath<br/>
+1)Stopwatch<br/>
 2)Timer<br/>
 3)Days Remaining Calculator<br/>
 <br/>
