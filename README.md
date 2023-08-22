@@ -3,7 +3,8 @@
 - There are 3 options to use that app;<br/>
   - 1) Stopwatch<br/>
   - 2) Timer<br/>
-  - 3) Days Remaining Calculator<br/>
+  - 3) Days Remaining Calculator
+<br/>
 1) Stopwatch<br/>
 There are 4 functions of that mode. You can reset, stop, start and close the stopwatch.<br/>
 <br/>
