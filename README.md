@@ -13,5 +13,3 @@ There are 4 input areas for this mode. You can set the timer for days, hours, mi
 <br/>
 3) Days Remaining Calculator<br/>
 There are 2 input areas for this mode. You can choose start and finish dates to calculate how many days between these 2 dates. In this function, you have 3 functions. These are reset, calculate and close. When you choose this mode, you will see current date as start and finish date.<br/>
-<br/> 
-I hope you enjoy it :)
