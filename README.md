@@ -2,11 +2,12 @@
 - This is a web application which is coded with Javascript, HTML and CSS.<br/>
 - There are 3 options to use that app;<br/>
   - 1) Stopwatch<br/>
+        - There are 4 functions of that mode. You can reset, stop, start and close the stopwatch.<br/>
   - 2) Timer<br/>
   - 3) Days Remaining Calculator
 <br/>
 1) Stopwatch<br/>
-There are 4 functions of that mode. You can reset, stop, start and close the stopwatch.<br/>
+
 <br/>
 2) Timer<br/>
 There are 4 input areas for this mode. You can set the timer for days, hours, minutes and seconds. When the time is over, you can see "Time is over!!!" text on screen. In this function, you have 4 functions which are same with stopwatch.<br/>
