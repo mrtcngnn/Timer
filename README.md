@@ -1,4 +1,4 @@
-# Timer <br/>
+# Timer
 - This is a web application which is coded with Javascript, HTML and CSS.<br/>
 - There are 3 options to use that app;<br/>
   - 1) Stopwatch<br/>
